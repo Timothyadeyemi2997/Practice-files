@@ -1,0 +1,133 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 10px;
+}
+
+
+body{
+  background-color: aliceblue;
+  color: black;
+  margin: 0%;
+}
+
+.Second-column{
+  color: 
+  background-color: aquamarine;
+}
+
+.container{
+  margin: 0;
+
+}
+
+h1,h2 {
+  color: rgb(5, 81, 153)
+}
+
+
+/* this is to style the all the  href elements */
+[href] {
+  color: red;
+}
+
+/* this is when some particular href is to be targeted ie those with the the attribute of "#"*/
+[href="#"] {
+  font-size: 20px;
+  font-weight: 10px;
+  
+}
+
+/* any attribute that start with "a" */
+li[class^="a"]{
+  font-weight: 50px;
+  color:rgb(2, 36, 46)
+}
+
+/*any attribute that end with "a"*/
+li[ class$="a"]{
+  color: rgb(7, 139, 156);
+}
+
+/* any where there is "a" attribute in any class attribute it will apply this features to*/
+[class*="a"]{
+ color: black;
+}
+
+
+/* Pseudo selector 
+this is a mouse interaction feature */
+
+a:hover{
+  test-decoration: none;
+  color: rgb(2, 36, 46)
+}
+
+/* Pseudo selector 
+for every attribute with link (href) features */
+
+a:link{
+}
+
+/* for first letter */
+p::first-letter{
+  font-size: 20px;
+  color: brown;
+}
+
+/* for first child of every section   */
+ section :first-child{
+ text-decoration: underline;
+}
+
+:last-child{
+
+}
+
+/* for Selection with mouse on the page  */
+::selection{
+  background-color: gray;
+}
+
+a::before{                                                                                         
+  content: "Hi"
+}
+
+a::after{
+  content: "Bye"
+}
+
+p::before {
+  content: "To the left paragraph"
+}
+
+p::after {
+  content:"To the right of the p" 
+}
+
+.container-box{
+  display: flex;
+  width: 90%;
+  padding: 20px;
+  background: #ddd;
+  margin: 20px 20px 20px 20px;
+  justify-content: center;
+
+}
+
+.box{
+  color: white;
+  width:50px
+  height: 600px;
+  background: rgb(2, 36, 46);
+  margin: 10px 10px 10px 10px;
+  transition: 1s;
+}
+
+
+.box:hover{
+  transform:scale(1.3);
+  background: #ff800a;
+  box-shadow:2px 2px 2px #000 
+  z-index: 2;
+}
+

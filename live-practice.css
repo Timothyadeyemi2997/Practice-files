@@ -1,0 +1,336 @@
+/* Reset CSS by Amaka Ndukwu */
+
+/* making use of :where to allow for low specificity making it easy to override */
+
+
+/* 1. border-box for box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. remove default margin 
+padding is optional but i do this because of lists*/
+
+:where(:not(dialog)) {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. great for in-page linking */
+@media(prefers-reduced-motion:no-preference) {
+    :where(html) {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 4. line height and text rendering improvement */
+:where(html) {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. ensure full viewport height */
+:where(html, body) {
+    min-block-size: 100%;
+}
+
+/* 6. improve line wrapping */
+:where(h1, h2, h3,
+    h4, h5, h6) {
+    text-wrap: balance;
+}
+
+:where(p) {
+    text-wrap: pretty;
+}
+
+:where(figure)>:where(figcaption) {
+    text-wrap: balance;
+}
+
+:where(p, h1, h2, h3,
+    h4, h5, h6) {
+    overflow-wrap: break-word;
+}
+
+
+
+/* 7. making media elements block-level */
+:where(img,
+    svg,
+    video,
+    canvas,
+    picture,
+    audio,
+    iframe,
+    embed,
+    object) {
+    display: block
+}
+
+:where(img, svg, video, canvas, picture) {
+    block-size: auto;
+    max-inline-size: 100%
+}
+
+/* 8. inherit font and letter spacing for form controls */
+:where(input,
+    button,
+    textarea,
+    select),
+:where(input[type=file])::-webkit-file-upload-button {
+    font: inherit;
+    letter-spacing: inherit
+}
+
+/* 9. textarea can only resized vertically and will grow to adjust its content */
+:where(textarea) {
+    resize: vertical;
+   field-sizing: content;
+}
+
+/* 10. table */
+:where(table) {
+    width: fit-content;
+    border-collapse: collapse;
+}
+
+:where(pre) {
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr
+}
+
+:where(a[href],
+    area,
+    button,
+    input:not([type=text],
+        [type=email],
+        [type=number],
+        [type=password],
+        [type=""],
+        [type=tel],
+        [type=url]),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"],
+        pre)) {
+    cursor: pointer
+}
+
+/*  this will disable additional non-standard gestures such as double-tap to zoom*/
+:where(a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation
+}
+
+/* my own styles */
+html {
+  height:100vh;
+}
+
+body {
+  background-color:#00c1b5; 
+  font-family: "Crimson Text", serif;
+  padding: 20px;
+}
+
+h1 {
+  font-family:"Bitter", serif;
+  font-weight: 800px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.text-bold {
+  font-weight: 700;
+  text-align: center;
+}
+
+.text-bold * + * {
+  margin-top: 10px;
+}
+
+.text-bold a:link{
+  color: white;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit:contain;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.float-right {
+  color:black;
+  text-decoration: none;
+  float: right;
+  vertical-align: bottom;
+
+}
+
+.left-foot {
+  text-align: left;
+  max-width: 300px;
+  height: auto;
+}
+
+.left-foot a:link {
+  color: black;
+}
+
+.issue {
+  display: inline-block;
+}
+
+.policy {
+  color: black;
+  font-weight: 800;
+}
+
+.policy a:link {
+  color: black;
+}
+
+/* Flex layout Practice */
+ hr {
+    margin-block: 40px;
+ }
+
+
+.fard{
+    background-color: black;
+    /* padding:30px; */
+    color:#fff;
+    border: #9e004a 1px solid;
+    flex: 1 1 auto;  
+}
+
+     /* flex above is the shorthand of the below properties */
+    /* flex-grow: 1;
+    flex-strink: 1;
+    flex-basis: 100px; */ 
+
+
+
+.fard-container{
+    display: flex;
+    padding: 20px; 
+    /* height:300px; */
+    width:250px;
+    border:1px solid #000;
+    flex-flow: row wrap;
+    align-items: center;
+    /* justify-content: flex-end; */
+    /* place-content: center; */
+    gap:5px;
+}
+
+.leavemealone {
+    align-self: center;
+}
+
+
+/* Grid layout Practice */
+.grid-item{
+    background: #265;
+    color:#fff;
+    padding: 10px;
+    border:1px solid #000;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(100px, 1fr) ); 
+    /* grid-template-columns: repeat(12, 1fr); */
+
+    /* grid-template-columns: minmax(100px, 1fr) 1fr 1fr; */
+    gap: 10px;
+    border: 1px solid #049e78;
+    padding: 20px;
+}
+
+.item-3 {
+    /* grid-column-start: 1;
+    grid-column-end: 3;   longhand of creating merged box*/
+    grid-column: 1 span 2;
+}
+
+.grid-container-2 {
+    display: grid;
+    grid-template-areas: "header header header header"
+    "sidebar content content content "
+    "sidebar footer footer footer";
+    gap:10px
+}
+
+.grid-container-2 header {
+    background:rgb(58, 58, 58);
+    grid-area: header;
+}
+
+.grid-container-2 aside{
+    background:#4d4d4d;
+    grid-area: sidebar;
+}
+
+.grid-container-2 main {
+    background:#4d4d4d;
+    grid-area: content;
+}
+
+.grid-container-2 footer {
+    background: #4d4d4d;
+    grid-area: footer;
+}
+
+/* CSS rules go here    */
+@mdia-type and (media-feature-rule) {
+    /* CSS rules go here */
+}
+
+@media screen and (min-width: 600px){
+    /* styles for screen wider than 600px */
+}
+
+@media print {
+    h1 {
+        color : red;
+    }
+}
+
+@media (min-width: 50cm) and (max-width: 60cm) {
+    /* styles for viewport wider than 50cm and narrower than 60cm */
+}
+
+@media (orientation: landscape) {
+    /* styles for landscape mode */
+    body::after {
+        content: landscape;
+    }
+}
+
+@media (orientation: portrait) {
+    /* styles for portrait mode */
+    body::after {
+        content: "Portrait";
+    }
+}
