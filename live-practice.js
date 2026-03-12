@@ -347,6 +347,17 @@
               console.log("The value was something unexpected");
       }
 
+      let someValue1 = [1, 2, 3];
+      let someValue2 = [4, 5, 6];
+      let someValue3 = [7, 8, 9];
+
+      let arrOfArrays = [someValue1, someValue2, someValue3];
+      let arrOfArrays2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+      console.log(arrOfArrays);
+      console.log(arrOfArrays2);
+
+      let value1 = arrOfArrays[0][1];
+      
 
       
 
@@ -426,3 +437,154 @@
 //  scope - identifies the current context of execution in which values and expressions are visible and can be referenced. 
 
 //  variables and expressions defined inside a function are not accessible outside of that function. 
+
+
+// CONSTRUCTORS FUNCTIONS FOR PERSON OBJECT
+/* function Person (first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+  this.fullName =function() {
+    return this.firstName + " " + this.lastName + " "+ this.age + " " + this.eyeColor
+  };
+  
+}
+
+// Create a Person object
+const myFather = new Person ("John", "Doe", 50, "Blue");
+const myMother = new Person ("Stella", "Doe", 48, "Green");
+const myself = new Person ("Maaike", "Doe", 29, "Brown");
+
+//Display full name
+document.getElementById("demo").innerHTML = "My father is " + myFather.fullName();
+
+    function countscores() {
+      for (let i=1; i<=5; i++) {
+        alert("Score is " + i);
+      }
+    } */
+
+      //EXAMPLE OF AN OBJECT 
+      // let dog = { dogName: "JavaScript",
+      //   weight: 2.4;
+      //   breed: "Chihuahua",
+      //   age: 3,
+      //   burglarBiter: true
+      // };
+
+      // dog["color"] = "blue"; // is the same as the below
+      // dog.color = "blue";
+
+      let company = { companyName: "Healthy Candy",
+        activity: "food manufacturing",
+        address: {
+          street: "2nd street",
+          number: "123",
+          zipcode: "33116",
+          city: "Miami",
+          state: "Florida" 
+        },
+        yearOfEstablishment: 2021
+      };
+      // we can change or modify any properties with this two approaches:
+      company.address.zipcode = "33117";
+      company["address"]["number"] = "100";
+
+
+      // Arrays in objects 
+
+      company = { companyName: "Healthy Candy",
+        activities: ["food manufacturing", "improving kids' health", "manufacturing toys"],
+        address: {
+          street: "2nd street",
+          number: "123",
+          zipcode: "33116",
+          city: "Miami",
+          state: "Florida"
+        },
+        yearOfEstablishment: 2021
+      };
+
+      // To access the secon value in the activities array:
+      let activity = company.activities[1];
+
+      // in a case where our company has many addresses:
+       let addresses = [{
+          street: "2nd street",
+          number: "123",
+          zipcode: "33116",
+          city: "Miami",
+          state: "Florida"
+       },
+      {
+          street: "1st West avenue",
+          number: "5",
+          zipcode: "75001",
+          city: "Addison",
+          state: "Texas"
+      }];
+
+      // The street name of the first object can be fetched using :
+      let streetName = addresses[0].street;
+
+
+      //Objects in arrays in objects
+            company = { companyName: "Healthy Candy",
+        activities: ["food manufacturing", "improving kids' health", "manufacturing toys"],
+        address: [{
+          street: "2nd street",
+          number: "123",
+          zipcode: "33116",
+          city: "Miami",
+          state: "Florida"
+        },
+      {
+        street: "1st West avenue",
+          number: "5",
+          zipcode: "75001",
+          city: "Addison",
+          state: "Texas"
+      }],
+        yearOfEstablishment: 2021
+      };
+
+      // access street name of healthy candy first address:
+      let streetName = company.address[0].street;
+
+      // im at Page 93 Javascript
+
+
+
+
+
+      // TS class JSON And Asynchronous 
+      // json stands for JavaScript Object Notation, it is a format for storing and transporting data. It is often used when data is sent from a server to a web page. JSON is "self-describing" and easy to understand.
+
+       const parseData = `{
+        "name": "John Doe",
+        "age": 30,
+        "email": "",
+        "children": [
+          {
+            "name": " Ada Doe",
+            "age": 5
+          },
+          {
+            "name": "Alex Doe",
+            "age": 3
+          }
+        ]
+      }`;
+
+      // change a string into an object
+      console.log(JSON.parse(parseData));
+
+      const data = {
+        "name": "John Doe",
+        "age": 30,
+        "email": "",
+      }
+
+      // change an object into a string 
+      console.log(JSON.stringify(data));

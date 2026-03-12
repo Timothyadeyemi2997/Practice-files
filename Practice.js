@@ -235,3 +235,67 @@ pet.name = function(){
 
 // Display Object Data
 document.getElementById("demo").innerHTML = "My Father is " + pet.name();
+
+// example of a promise in JSON data fetching
+// note: the fetch() method returns a Promise that resolves to the Response to that request, whether it is successful or not.
+let fetchPromises = fetch( "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+    );
+
+fetchPromises.then((response) => {
+  const jsonPromise = response.json();
+  jsonPromise.then((data) => {
+    console.log(data[0].name);
+  });
+});
+
+console.log("I will log before the data is fectched");
+
+// without "then "
+fetchPromises = fetch( "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+    );
+    console.log(fetchPromises);
+
+    // The Fetch() API
+
+    const url2 = "https://fakestoreapi.com/products";
+    // call 'fetch()' . passing in hte URL
+    fetch(url2)
+    // fetch() returns a Promise . when we have received a response from the server.
+
+    // the promise's 'then()' handler is called with the response.
+    .then((response) => {
+      //our handler throws an error if the request did not succeed.
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      // otherwise (if the response succeeded), our handler fetches the response body 
+      // as JSON by calling response.json(), and immediately returns the Promise.
+      // returned by `response.json()`.
+      return response.json();
+    })
+
+    //when response.text() has succeeded, the  second 'then()' handler is called with 
+    // the text, and we copy it into the `poemDisplay` box.
+    .then((result) => {
+      console.log(result);
+    })
+
+    // Catch any errors that might happen, and display a message
+    // in the `poemDisplay` box.
+    .catch((error) => {
+      console.error(`Could not fetch verse: ${error}`);
+    });
+
+    fetch ("https://fakestoreapi.com/products")
+    .then((response) => {
+      if (!response.ok) {
+        console.log("you have an error");
+      }
+       return response.json();
+    })
+    .then((result) => { // the response.json is returned and now named result in this code block
+      console.log(result);
+    })
+    .catch((error) => {
+      console.error(`the error is: ${error}`);
+    });
