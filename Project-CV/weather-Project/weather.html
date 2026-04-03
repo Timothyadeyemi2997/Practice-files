@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weather App</title>
+
+  <link rel="stylesheet" href="weather.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <h2>Weather App</h2>
+
+      <select id="unitToggle">
+        <option value="metric">°C</option>
+        <option value="imperial">°F</option>
+      </select>
+
+    </header>
+
+    <h1>What says the weather today?</h1>
+
+    <div class="search-bar">
+
+      <input id="searchInput" type="text" placeholder="Search for a place">
+
+      <button id="searchBtn">Search</button>
+
+    </div>
+
+    <div class="weather-grid">
+
+
+      <!-- LEFT -->
+
+      <div class="left">
+
+        <div class="current-weather">
+
+          <div>
+            <h3 id="city">City</h3>
+            <p id="date"></p>
+          </div>
+
+          <div class="temp">
+
+            <canvas id="weatherIcon" width="60" height="60"></canvas>
+
+            <h2 id="temperature">--°</h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="stats">
+
+          <div class="stat">
+            <p>Feels Like</p>
+            <h3 id="feels">--</h3>
+          </div>
+
+          <div class="stat">
+            <p>Humidity</p>
+            <h3 id="humidity">--</h3>
+          </div>
+
+          <div class="stat">
+            <p>Wind</p>
+            <h3 id="wind">--</h3>
+          </div>
+
+          <div class="stat">
+            <p>Pressure</p>
+            <h3 id="pressure">--</h3>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="right">
+
+        <h3>Hourly Forecast</h3>
+
+        <div id="hourly" class="hourly"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="weather.js"></script>
+
+</body>
+
+</html>

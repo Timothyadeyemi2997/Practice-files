@@ -322,3 +322,25 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.product {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+.add-to-cart {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer; /* Changes cursor to a hand icon */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+

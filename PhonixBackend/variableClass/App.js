@@ -71,10 +71,12 @@ console.log(nums); // Outputs: [1, 2, 3, 4, 5] (original array unchanged)
 
 // ES6+ 
 // Array destructuring 
-const numberss = [1, 2, 3];
-const [first, second, third] = numberss; // first = 1, second = 2, third = 3
+const Number = [1, 2, 3];
+const [first, second, third] = Number; // first = 1, second = 2, third = 3
 console.log(first); // Outputs: 1
 
 //Object destructuring
 const person = {name: "Alice", age:30};
 const {name, age} = person; // name = "Alice", age = 30
+
+

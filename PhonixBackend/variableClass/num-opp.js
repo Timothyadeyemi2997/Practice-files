@@ -88,3 +88,32 @@ Array.forEach(element => {
 // relational operators are used to compare values and return a boolean value (true or false) based on the comparison. They include:
 // == (equal to): checks if two values are equal (ignoring type)
 // === (strict equal to): checks if two values are equal (considering type)
+
+/*====== 
+   ES6+
+  ====== 
+  
+  ES6 (ECMAScript 2015) and later versions add powerful new features to JavaScript that make your code more expressive, concise, and safer,
+  Node.js has excellent support for modern JavaScript features.*/
+
+  /* Function is a block of code for solving a particular task
+    => Arror function provide a concise syntax for writing functions and automatically bind this to the surrounding 
+
+    March 7: - 36:32
+
+    //simple class with constructor */
+
+    class Person{
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      greet() {
+        return  `Hello, i'm $(this.name)!`;
+      }
+    }
+
+    //create an instance
+    const person = new Person ("Alice", 25);
+    console.log(person.greet()); //Hello, i'm Alice
